@@ -19,9 +19,9 @@ def showForm():
 @app.route("/insert",methods=['POST'])
 def insert():
     if request.method == "POST":
-        fname = request.form['fname']
-        lname = request.form['lname']
-        phone = request.form['phone']
+        fname = request.form["fname"]
+        lname = request.form["lname"]
+        phone = request.form["phone"]
         cur = conn.cursor()
         sql = "insert into student(fname,lname,phone) value(%s,%s,%s)"
         cur.execute(sql,(fname,lname,phone))
